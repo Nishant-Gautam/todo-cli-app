@@ -15,43 +15,6 @@ function init2(){
     }
 }
 
-const usage = process.argv[2]; //which command to execute
-
-const argument = process.argv[3]; // argument for del , done
-
-
-// running code according to user's command
-switch(usage){
-    case "help":
-        helpSection();
-        break;
-
-    case "add":
-        addSection(argument);
-        break;
-
-    case "ls":
-        listSection();
-        break;
-
-    case "del":
-        deleteSection(argument);
-        break;
-
-    case "done":
-        doneSection(argument);
-        break;
-
-    case "report":
-        reportSection();
-        break;
-
-    default:
-        helpSection();
-        break;
-        
-}
-
 // code for help section
 function helpSection(){
     console.log("Usage :-");
@@ -156,4 +119,42 @@ function reportSection(){
     var completed = reportDone.length-1;
     console.log(`${date} Pending : ${pending} Completed : ${completed}`)
 
+}
+
+
+const usage = process.argv[2]; //which command to execute
+
+const argument = process.argv[3]; // argument for del , done
+
+
+// running code according to user's command
+switch(usage){
+    case "help":
+        helpSection();
+        break;
+
+    case "add":
+        addSection(argument);
+        break;
+
+    case "ls":
+        listSection();
+        break;
+
+    case "del":
+        deleteSection(argument);
+        break;
+
+    case "done":
+        doneSection(argument);
+        break;
+
+    case "report":
+        reportSection();
+        break;
+
+    default:
+        helpSection();
+        break;
+        
 }
